@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine 💖</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffe6ea;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            width: 80%;
+            max-width: 400px;
+        }
+        input {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            width: 80%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #ff4d6d;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .hidden {
+            display: none;
+        }
+        img {
+            width: 100px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="letter">
+        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="Heart">
+        <h2>Dear Omowunmi, 💕</h2>
+        <p>Will you be having a Valentine this Friday or will you be on your own? 🤔</p>
+        <p>Answer these questions if you dare... 😏</p>
+        <button onclick="showQuestions()">Proceed 💌</button>
+    </div>
+
+    <div class="container hidden" id="questions">
+        <h2>Answer these correctly to proceed. 💘</h2>
+        <input type="text" id="q1" placeholder="What is the name of your man?">
+        <input type="text" id="q2" placeholder="What is the nickname?">
+        <input type="text" id="q3" placeholder="When did you start dating?">
+        <button onclick="checkAnswers()">Submit 💕</button>
+    </div>
+
+    <div class="container hidden" id="congratulations">
+        <img src="https://cdn-icons-png.flaticon.com/512/2583/2583346.png" alt="Love">
+        <h2>🎉 Congratulations, Omowunmi! 🎉</h2>
+        <p>You have won yourself a Valentine's Day with TJ Bobo! 💝</p>
+        <p>Dear Omowunmi, my perfect place, this Valentine’s Day coincides with our one-month anniversary, and I just want you to know today that you mean the world to me. I love you so much. As we continue, I cannot wait to spend my whole life with you. 💖 Happy Valentine’s Day, my darling. ❤️</p>
+    </div>
+
+    <script>
+        function showQuestions() {
+            document.getElementById("letter").classList.add("hidden");
+            document.getElementById("questions").classList.remove("hidden");
+        }
+
+        function checkAnswers() {
+            var q1 = document.getElementById("q1").value.trim().toUpperCase();
+            var q2 = document.getElementById("q2").value.trim().toUpperCase();
+            var q3 = document.getElementById("q3").value.trim();
+            
+            if ((q1 === "FAITH" || q1 === "TEJU") && q2 === "TJ BOBO" && q3 === "Jan 9th") {
+                document.getElementById("questions").classList.add("hidden");
+                document.getElementById("congratulations").classList.remove("hidden");
+            } else {
+                alert("Oops! Try again, my love ❤️");
+            }
+        }
+    </script>
+</body>
+</html>
